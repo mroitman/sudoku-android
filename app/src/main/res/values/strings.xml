@@ -8,6 +8,6 @@
     <string name="new_game">Comenzar juego</string>
     <string name="input_number">Numero a ingresar</string>
     <string name="level">Nivel de Dificultad:</string>
-    <string name="save_games">Partidas Guardadas</string>
+    <string name="saved_games">Partidas Guardadas</string>
     <string name="scores">Puntajes</string>
 </resources>
