@@ -5,6 +5,9 @@
     <string name="easy">Easy</string>
     <string name="super_easy">Super easy</string>
     <string name="main_title">SUDOKU</string>
-    <string name="new_game">Nuevo juego</string>
+    <string name="new_game">Comenzar juego</string>
     <string name="input_number">Numero a ingresar</string>
+    <string name="level">Nivel de Dificultad:</string>
+    <string name="saved_games">Partidas Guardadas</string>
+    <string name="scores">Puntajes</string>
 </resources>
