@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="nivelDeDificultad"
             type="String" />
@@ -49,14 +48,14 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/difficultyLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:text="@{nivelDeDificultad}"
             app:layout_constraintStart_toEndOf="@+id/labelLevel"
             app:layout_constraintTop_toTopOf="@+id/labelLevel"
-            tools:text="Normal" />
+            tools:text="Difícil" />
 
         <LinearLayout
             android:layout_width="0dp"
