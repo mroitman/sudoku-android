@@ -31,8 +31,8 @@
             android:layout_width="395dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="212dp"
-            android:max="4"
-            android:progress="3"
+            android:max="3"
+            android:progress="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titulo" />
@@ -55,7 +55,7 @@
             android:text="@{nivelDeDificultad}"
             app:layout_constraintStart_toEndOf="@+id/labelLevel"
             app:layout_constraintTop_toTopOf="@+id/labelLevel"
-            tools:text="Difícil" />
+            />
 
         <LinearLayout
             android:layout_width="0dp"

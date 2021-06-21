@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.SeekBar
 import androidx.databinding.DataBindingUtil
 import ar.edu.unlam.sudoku.databinding.ActivityMainBinding
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -21,19 +22,19 @@ class MainActivity : AppCompatActivity() {
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
                 seekBar?.apply {
-                    binding.difficultyLevel.text= when (progress) {
-                        0 -> "Muy Fácil"
-                        1 -> "Fácil"
-                        2 -> "Normal"
-                        3 -> "Difícil"
-                        4 -> "Muy Difícil"
-                        else->"Seleccione un Nivel"
+                    binding.nivelDeDificultad = when (this.progress) {
+                        0 -> getString(R.string.super_easy)
+                        1 -> getString(R.string.easy)
+                        2 -> getString(R.string.medium)
+                        3 -> getString(R.string.hard)
+                        else -> throw Exception("Se seleccionó un nivel inexistente")
                     }
                 }
             }
         })
-        }
+        binding.nivelDeDificultad = getString(R.string.medium)
     }
+}
 
 
 
