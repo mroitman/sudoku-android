@@ -18,19 +18,30 @@
             android:id="@+id/titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="128dp"
+            android:layout_marginTop="80dp"
             android:text="@string/main_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#515151"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="142dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_sudoku"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
         <SeekBar
             android:id="@+id/level"
             style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="395dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="212dp"
+            android:layout_marginTop="260dp"
             android:max="3"
             android:progress="2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,8 +53,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="3dp"
             android:text="@string/level"
+            android:textColor="#303030"
             app:layout_constraintBottom_toTopOf="@+id/level"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -51,13 +63,15 @@
             android:id="@+id/difficultyLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
+            android:layout_marginStart="6dp"
             android:text="@{nivelDeDificultad}"
+            android:textColor="#0E0E0E"
+            android:textStyle="italic"
             app:layout_constraintStart_toEndOf="@+id/labelLevel"
-            app:layout_constraintTop_toTopOf="@+id/labelLevel"
-            />
+            app:layout_constraintTop_toTopOf="@+id/labelLevel" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -73,19 +87,25 @@
                 android:id="@+id/buttonNewGame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/new_game" />
+                android:drawableEnd="@drawable/ic_baseline_play_arrow_24"
+                android:text="@string/new_game"
+                app:backgroundTint="#4CAF50" />
 
             <Button
                 android:id="@+id/buttonSaveGames"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/saved_games" />
+                android:drawableEnd="@drawable/ic_baseline_save_alt_24"
+                android:text="@string/saved_games"
+                app:backgroundTint="#2196F3" />
 
             <Button
                 android:id="@+id/buttonScores"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/scores" />
+                android:drawableEnd="@drawable/ic_baseline_score_24"
+                android:text="@string/scores"
+                app:backgroundTint="#FF5722" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
