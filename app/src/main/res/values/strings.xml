@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Sudoku</string>
-    <string name="hard">Hard</string>
-    <string name="medium">Medium</string>
-    <string name="easy">Easy</string>
-    <string name="super_easy">Super Easy</string>
+    <string name="hard">HARD</string>
+    <string name="medium">MEDIUM</string>
+    <string name="easy">EASY</string>
+    <string name="super_easy">SUPER EASY</string>
     <string name="main_title">SUDOKU</string>
     <string name="new_game">Comenzar juego</string>
     <string name="input_number">Numero a ingresar</string>

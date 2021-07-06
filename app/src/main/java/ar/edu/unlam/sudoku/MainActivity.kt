@@ -1,5 +1,6 @@
 package ar.edu.unlam.sudoku
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SeekBar
@@ -13,26 +14,38 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        binding.nivelDeDificultad = getString(R.string.medium)
+        setSeekBarListener()
+    }
+
+    private fun setSeekBarListener() {
+        binding.buttonNewGame.setOnClickListener { newGame() }
+
         binding.level.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-            }
-
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
                 seekBar?.apply {
-                    binding.nivelDeDificultad = when (this.progress) {
-                        0 -> getString(R.string.super_easy)
-                        1 -> getString(R.string.easy)
-                        2 -> getString(R.string.medium)
-                        3 -> getString(R.string.hard)
-                        else -> throw Exception("Se seleccionó un nivel inexistente")
-                    }
+                    binding.difficultyLevel.text = getDifficultyLevel()
                 }
             }
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+            }
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            }
         })
-        binding.nivelDeDificultad = getString(R.string.medium)
+    }
+
+    private fun getDifficultyLevel() = when (binding.level.progress) {
+        0 -> getString(R.string.super_easy)
+        1 -> getString(R.string.easy)
+        2 -> getString(R.string.medium)
+        3 -> getString(R.string.hard)
+        else -> throw Exception("Se seleccionó un nivel inexistente")
+    }
+
+    private fun newGame() {
+        val intentNuevoJuego = Intent(this, SudokuActivity::class.java)
+        startActivity(intentNuevoJuego)
     }
 }
 
